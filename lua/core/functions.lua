@@ -17,14 +17,13 @@ end
 
 M.compile_cpp = function()
 	local compilecmd
-    local current_path="%:h/*.cpp "
 	local compileflag = "-o %< "
 	if vim.bo.filetype == "c" then
-		compilecmd = "!gcc "
+		compilecmd = "!gcc %:h/*.c "
 	elseif vim.bo.filetype == "cpp" then
-		compilecmd = "!g++ "
+		compilecmd = "!g++ %:h/*.cpp "
 	end
-	local cmd = compilecmd .. current_path .. compileflag
+	local cmd = compilecmd .. compileflag
 	local msg = exec(cmd, true)
 	return msg
 end
