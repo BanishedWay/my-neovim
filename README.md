@@ -1,2 +1,2 @@
-# my-neovim
-我的neovim配置
+# 我的neovim配置
+
