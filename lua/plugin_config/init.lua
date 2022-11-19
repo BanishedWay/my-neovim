@@ -1,5 +1,5 @@
 require("plugin_config.blankline_config")
-require("plugin_config.onedark_config")
+-- require("plugin_config.onedark_config")
 require("plugin_config.filetype_config")
 require("plugin_config.telescope_config")
 require("plugin_config.treesitter_config")
