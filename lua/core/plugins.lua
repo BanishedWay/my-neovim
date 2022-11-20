@@ -11,7 +11,8 @@ if fn.empty(fn.glob(install_path)) > 0 then
 		"clone",
 		"--depth",
 		"1",
-		"https://github.com/wbthomason/packer.nvim",
+		"git@github.com:wbthomason/packer.nvim.git",
+		-- "https://github.com/wbthomason/packer.nvim",
 		--"https://gitcode.net/mirrors/wbthomason/packer.nvim",
 		install_path,
 	})
@@ -29,9 +30,9 @@ if not status_ok then
 	return
 end
 packer.init({
-    git = {
-        default_url_format = 'git@github.com:%s'
-    }
+	git = {
+		default_url_format = "git@github.com:%s",
+	},
 })
 packer.startup({
 	function(use)
@@ -59,13 +60,14 @@ packer.startup({
 			"tzachar/cmp-tabnine",
 			run = "./install.sh",
 			requires = "hrsh7th/nvim-cmp",
-		})  ]]--{'name'='tabnine'}
+		})  ]]
+		--{'name'='tabnine'}
 		-- Lua 增强
 		use("folke/lua-dev.nvim")
 		--Rust增强
-		use("simrat39/rust-tools.nvim")
+		-- use("simrat39/rust-tools.nvim")
 		-- TypeScript 增强
-		use({ "jose-elias-alvarez/nvim-lsp-ts-utils", requires = { "nvim-lua/plenary.nvim", opt = false } })
+		-- use({ "jose-elias-alvarez/nvim-lsp-ts-utils", requires = { "nvim-lua/plenary.nvim", opt = false } })
 		-- UI 增强
 		use("onsails/lspkind-nvim")
 		use("tami5/lspsaga.nvim")
@@ -100,7 +102,7 @@ packer.startup({
 			config = function()
 				require("aerial").setup()
 			end,
-		}) 
+		})
 		--treesitter
 		use({
 			"nvim-treesitter/nvim-treesitter",
@@ -188,7 +190,7 @@ packer.startup({
 		use("nathom/filetype.nvim")
 		use("lewis6991/impatient.nvim")
 
-		use({ "michaelb/sniprun", run = "bash ./install.sh" })
+		use({ "michaelb/sniprun", run = "zsh ./install.sh" })
 		-----session
 		use({
 			"olimorris/persisted.nvim",

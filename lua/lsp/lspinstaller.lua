@@ -9,30 +9,21 @@ local servers = {
 	bashls = require("lsp.settings.bash"),
 	pyright = require("lsp.settings.pyright"),
 	clangd = require("lsp.settings.cpp"),
-	jdtls = require("lsp.settings.java"),
+	-- jdtls = require("lsp.settings.java"),
 	vimls = require("lsp.settings.vim"),
 	cmake = require("lsp.settings.cmake"),
 	prosemd_lsp = require("lsp.settings.markdown"),
-	rust_analyzer = require("lsp.settings.rust"),
-	tsserver = require("lsp.settings.ts"),
-	html = require("lsp.settings.html"),
-	cssls = require("lsp.settings.css"),
+	-- rust_analyzer = require("lsp.settings.rust"),
+	-- tsserver = require("lsp.settings.ts"),
+	-- html = require("lsp.settings.html"),
+	-- cssls = require("lsp.settings.css"),
 }
 
 for name, config in pairs(servers) do
-	if name == "jdtls" then
-		if config ~= nil and type(config) == "table" then
-			config.download_jdtls()
-			config.on_setup(lspconfig[name])
-		else
-			lspconfig[name].setup({})
-		end
+	if config ~= nil and type(config) == "table" then
+		config.on_setup(lspconfig[name])
 	else
-		if config ~= nil and type(config) == "table" then
-			config.on_setup(lspconfig[name])
-		else
-			lspconfig[name].setup({})
-		end
+		lspconfig[name].setup({})
 	end
 end
 
