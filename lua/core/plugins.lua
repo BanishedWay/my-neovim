@@ -56,12 +56,7 @@ packer.startup({
 		use("hrsh7th/cmp-path") -- { name = 'path' }
 		use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
 		use("hrsh7th/cmp-nvim-lsp-signature-help") -- { name = 'nvim_lsp_signature_help' }
-		--[[ use({
-			"tzachar/cmp-tabnine",
-			run = "./install.sh",
-			requires = "hrsh7th/nvim-cmp",
-		})  ]]
-		--{'name'='tabnine'}
+		-- use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" }) --{'name'='tabnine'}
 		-- Lua 增强
 		use("folke/lua-dev.nvim")
 		--Rust增强
