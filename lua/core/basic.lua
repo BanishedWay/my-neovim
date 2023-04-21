@@ -63,7 +63,7 @@ vim.o.showtabline = 2
 vim.opt.clipboard = "unnamedplus"
 
 -- 配置leaderF
-vim.g.Lf_WindowPosition = "popup"
+-- vim.g.Lf_WindowPosition = "popup"
 
-vim.g.dashboard_default_executive = "telescope"
-vim.notify = require("notify")
+-- vim.g.dashboard_default_executive = "telescope"
+-- vim.notify = require("notify")
