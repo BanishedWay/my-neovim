@@ -8,10 +8,10 @@ local servers = {
 	-- sumneko_lua = require("lsp.settings.lua"), -- lua/lsp/config/lua.lua
 	bashls = require("lsp.settings.bash"),
 	pyright = require("lsp.settings.pyright"),
-	clangd = require("lsp.settings.cpp"),
+	-- clangd = require("lsp.settings.cpp"),
 	-- jdtls = require("lsp.settings.java"),
 	vimls = require("lsp.settings.vim"),
-	cmake = require("lsp.settings.cmake"),
+	-- cmake = require("lsp.settings.cmake"),
 	prosemd_lsp = require("lsp.settings.markdown"),
 	-- rust_analyzer = require("lsp.settings.rust"),
 	-- tsserver = require("lsp.settings.ts"),
@@ -27,4 +27,4 @@ for name, config in pairs(servers) do
 	end
 end
 
-lspconfig.sumneko_lua.setup(require("lsp.settings.lua"))
+-- lspconfig.lua_ls.setup(require("lsp.settings.lua"))
