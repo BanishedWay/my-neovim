@@ -1,7 +1,6 @@
 local myAutoGroup = vim.api.nvim_create_augroup("myAutoGroup", {
 	clear = true,
 })
-local funcs = require("core.functions")
 
 local autocmd = vim.api.nvim_create_autocmd
 
@@ -16,11 +15,3 @@ autocmd("BufEnter", {
 	end,
 })
 
---自动格式化
-autocmd("BufWritePre", {
-	group = myAutoGroup,
-	pattern = "*",
-	callback = function()
-		funcs.format_save()
-	end,
-})
